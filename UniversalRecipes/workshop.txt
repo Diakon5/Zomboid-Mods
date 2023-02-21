@@ -1,0 +1,5 @@
+version=1
+title=Universal Recipes
+description=This mod automatically patches all recipes to try and increase inter-mod compatibility
+tags=
+visibility=public

@@ -1,0 +1,10 @@
+version=1
+id=2903623882
+title=General Anxiety
+description=General Anxiety is a mod that expands on the base game stress stat. In vanilla, Stress is built up by being near zombies, not smoking for a while as a smoker, and being covered in blood with the "Fear of blood" trait.  This mod makes it so other moodles cause stress buildup or stress reduction, based on sandbox settings. Having higher level of moodles above the minimal level causes extra buildup, the severity of which is customizable.
+description=
+description=Now includes a submod which enables support for the Moodle Framework moodles!
+description=
+description=[h3]This mod was made for the UdderlyRP server, find us on Discord at https://discord.gg/9HUdNf7qGe[/h3]
+tags=Build 41;Balance;Hardmode
+visibility=public

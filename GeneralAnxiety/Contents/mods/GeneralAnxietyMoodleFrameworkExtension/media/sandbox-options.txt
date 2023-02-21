@@ -1,0 +1,6 @@
+VERSION = 1,
+option DaikonGeneralAnxiety.MoodleListMoodleFramework
+{
+    type = string, default = ,
+    page = DaikonGeneralAnxiety, translation = DGR_MoodleListMoodleFramework,
+}

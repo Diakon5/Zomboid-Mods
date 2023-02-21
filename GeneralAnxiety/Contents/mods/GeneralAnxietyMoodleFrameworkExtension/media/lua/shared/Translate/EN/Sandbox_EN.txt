@@ -1,0 +1,6 @@
+Sandbox_EN = {
+    Sandbox_DGR_MoodleList = "Moodle List: Vanilla",
+    Sandbox_DGR_MoodleListMoodleFramework = "Moodle List: Moodle Framework",
+    Sandbox_DGR_MoodleListMoodleFramework_tooltip = "The list of moodles that affect the stress: the internal name, the level threshold, and the actual multiplier.",
+
+	}

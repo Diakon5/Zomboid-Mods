@@ -1,0 +1,4 @@
+name=General Anxiety Moodle Framework Extension
+id=daikonGeneralAnxietyMoodleFramework
+description=This module extends General Anxiety's Functionality to support moodles added with Moodle Framework
+require=daikonGeneralAnxiety,MoodleFramework

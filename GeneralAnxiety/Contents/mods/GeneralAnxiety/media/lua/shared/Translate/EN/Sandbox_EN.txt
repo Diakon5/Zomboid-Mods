@@ -1,0 +1,13 @@
+Sandbox_EN = {
+    Sandbox_DaikonGeneralAnxiety  = "General Anxiety",
+    Sandbox_DGR_MoodleList = "Moodle List",
+    Sandbox_DGR_GlobalBuildMult = "Global Buildup Multiplier",
+    Sandbox_DGR_GlobalReduxMult = "Global Reduction Multiplier",
+    Sandbox_DGR_LeveledBuildMult = "High Level Buildup Multiplier",
+    Sandbox_DGR_LeveledReduxMult = "High Level Reduction Multiplier",
+    Sandbox_DGR_MoodleList_tooltip = "The list of moodles that affect the stress: the internal name, the level threshold, and the actual multiplier.",
+    Sandbox_DGR_GlobalBuildMult_tooltip = "Global Multiplier to all anxiety buildup caused by this mod.",
+    Sandbox_DGR_GlobalReduxMult_tooltip = "Global Multiplier to all anxiety reduction caused by this mod, excluding Hydroxyzine effects.",
+    Sandbox_DGR_LeveledBuildMult_tooltip = "Multiplier to anxiety buildup from moodle levels above the threshold.",
+    Sandbox_DGR_LeveledReduxMult_tooltip = "Multiplier to anxiety reduction from moodle levels above the threshold.",
+	}

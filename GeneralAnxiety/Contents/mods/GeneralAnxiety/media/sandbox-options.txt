@@ -1,0 +1,27 @@
+VERSION = 1,
+option DaikonGeneralAnxiety.GlobalBuildupMultiplier
+{
+    type = double, min = 0, max = 100, default = 1,
+    page = DaikonGeneralAnxiety, translation = DGR_GlobalBuildMult,
+}
+option DaikonGeneralAnxiety.GlobalReductionMultiplier
+{
+    type = double, min = 0, max = 100, default = 1,
+    page = DaikonGeneralAnxiety, translation = DGR_GlobalReduxMult,
+}
+option DaikonGeneralAnxiety.LeveledBuildupMultiplier
+{
+    type = double, min = 0, max = 100, default = 1,
+    page = DaikonGeneralAnxiety, translation = DGR_LeveledBuildMult,
+}
+option DaikonGeneralAnxiety.LeveledReductionMultiplier
+{
+    type = double, min = 0, max = 100, default = 1,
+    page = DaikonGeneralAnxiety, translation = DGR_LeveledReduxMult,
+}
+option DaikonGeneralAnxiety.MoodleList
+{
+    type = string,
+    default = Hungry@2:4;Thirst@2:4;Bleeding@1:20;Pain@1:4;Injured@2:6;Sick@2:2;Drunk@1:-10;Hypothermia@1:1;Hyperthermia@1:1;FoodEaten@1:-2;Wet@2:1;Panic@2:4,
+    page = DaikonGeneralAnxiety, translation = DGR_MoodleList,
+}

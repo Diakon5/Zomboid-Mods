@@ -11,7 +11,7 @@ local function patchRecipes()
         dullKnives = "[Recipe.GetItemTypes.DullKnife]",
         sharpKnives = "[Recipe.GetItemTypes.SharpKnife]",
         scissors = "[Recipe.GetItemTypes.Scissors]",
-        weldingMasks = "keep [Recipe.GetItemTypes.WeldingMask]",
+        weldingMasks = "[Recipe.GetItemTypes.WeldingMask]",
         forks = "[Recipe.GetItemTypes.Fork]",
         disinfectants = "[Recipe.GetItemTypes.Disinfectant]",
         sugar = "[Recipe.GetItemTypes.Sugar]",
@@ -24,7 +24,6 @@ local function patchRecipes()
     ---@type ArrayList
     local recipes = scriptManager:getAllRecipes()
 	print("DAIKON UNIVERSAL RECIPES DEBUG")
-    print(scriptItems.sharpKnives)
     for i=0, recipes:size() - 1 do
         ---@type Recipe
         local recipe = recipes:get(i)
@@ -36,7 +35,8 @@ local function patchRecipes()
                 local recipeItems = recipeSource:get(j):getItems()
                 if recipeItems:contains("Base.WeldingMask") and recipeItems:size()==1 then
                     recipeSource:remove(j)
-                    recipe:DoSource(scriptItems.weldingMasks)
+                    recipe:DoSource("keep ".. scriptItems.weldingMasks)
+                    print("Patched Recipe "..recipe:getName())
                 end
                 --replace with actual patcher code
                 --[[local items = recipe:getName().."\n"

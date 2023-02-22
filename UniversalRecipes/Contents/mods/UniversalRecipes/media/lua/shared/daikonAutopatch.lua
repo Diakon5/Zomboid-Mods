@@ -11,7 +11,7 @@ local function patchRecipes()
         dullKnives = "[Recipe.GetItemTypes.DullKnife]",
         sharpKnives = "[Recipe.GetItemTypes.SharpKnife]",
         scissors = "[Recipe.GetItemTypes.Scissors]",
-        weldingMasks = "[Recipe.GetItemTypes.WeldingMask]",
+        weldingMasks = "keep [Recipe.GetItemTypes.WeldingMask]",
         forks = "[Recipe.GetItemTypes.Fork]",
         disinfectants = "[Recipe.GetItemTypes.Disinfectant]",
         sugar = "[Recipe.GetItemTypes.Sugar]",

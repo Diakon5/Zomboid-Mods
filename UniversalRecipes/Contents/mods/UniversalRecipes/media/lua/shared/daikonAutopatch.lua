@@ -5,45 +5,26 @@ local daikon = {
 
 local function patchRecipes()
     local scriptItems ={
-        canOpeners = PZArrayList:emptyList(),
-        hammers = PZArrayList:emptyList(),
-        screwdrivers = PZArrayList:emptyList(),
-        dullKnives = PZArrayList:emptyList(),
-        sharpKnives = PZArrayList:emptyList(),
-        scissors = PZArrayList:emptyList(),
-        weldingMasks = PZArrayList:emptyList(),
-        forks = PZArrayList:emptyList(),
-        disinfectants = PZArrayList:emptyList(),
-        liquor = PZArrayList:emptyList(),
-        milk = PZArrayList:emptyList(),
-        sugar = PZArrayList:emptyList(),
-        brokenGlass = PZArrayList:emptyList(),
-        sewingNeedle = PZArrayList:emptyList(),
+        canOpeners = "[Recipe.GetItemTypes.CanOpener]",
+        hammers = "[Recipe.GetItemTypes.Hammer]",
+        screwdrivers = "[Recipe.GetItemTypes.Screwdriver]",
+        dullKnives = "[Recipe.GetItemTypes.DullKnife]",
+        sharpKnives = "[Recipe.GetItemTypes.SharpKnife]",
+        scissors = "[Recipe.GetItemTypes.Scissors]",
+        weldingMasks = "[Recipe.GetItemTypes.WeldingMask]",
+        forks = "[Recipe.GetItemTypes.Fork]",
+        disinfectants = "[Recipe.GetItemTypes.Disinfectant]",
+        sugar = "[Recipe.GetItemTypes.Sugar]",
+        rice = "[Recipe.GetItemTypes.Rice]",
+        sewingNeedle = "[Recipe.GetItemTypes.SewingNeedle]",
 
     }
-    Recipe.GetItemTypes.CanOpener(scriptItems.canOpeners)
-    Recipe.GetItemTypes.Hammer(scriptItems.hammers)
-    Recipe.GetItemTypes.Screwdriver(scriptItems.screwdrivers)
-    Recipe.GetItemTypes.DullKnife(scriptItems.dullKnives)
-    Recipe.GetItemTypes.SharpKnife(scriptItems.sharpKnives)
-    Recipe.GetItemTypes.Scissors(scriptItems.scissors)
-    Recipe.GetItemTypes.WeldingMask(scriptItems.weldingMasks)
-    Recipe.GetItemTypes.Fork(scriptItems.forks)
-    Recipe.GetItemTypes.Disinfectant(scriptItems.disinfectants)
-    Recipe.GetItemTypes.Liquor(scriptItems.liquor)
-    Recipe.GetItemTypes.Milk(scriptItems.milk)
-    Recipe.GetItemTypes.Sugar(scriptItems.sugar)
-    Recipe.GetItemTypes.BrokenGlass(scriptItems.brokenGlass)
-    Recipe.GetItemTypes.SewingNeedle(scriptItems.sewingNeedle)
     ---@type ScriptManager
     local scriptManager = ScriptManager.instance
     ---@type ArrayList
     local recipes = scriptManager:getAllRecipes()
-    print(scriptItems.liquor)
-    print(scriptItems.milk)
-    print(scriptItems.brokenGlass)
-    print(scriptItems.weldingMasks)
 	print("DAIKON UNIVERSAL RECIPES DEBUG")
+    print(scriptItems.sharpKnives)
     for i=0, recipes:size() - 1 do
         ---@type Recipe
         local recipe = recipes:get(i)
@@ -52,13 +33,18 @@ local function patchRecipes()
         local recipeSource = recipe:getSource()
         for j=0, recipeSource:size()-1 do
             if recipeSource:get(j):isKeep() then
+                local recipeItems = recipeSource:get(j):getItems()
+                if recipeItems:contains("Base.WeldingMask") and recipeItems:size()==1 then
+                    recipeSource:remove(j)
+                    recipe:DoSource(scriptItems.weldingMasks)
+                end
                 --replace with actual patcher code
-                local items = recipe:getName().."\n"
+                --[[local items = recipe:getName().."\n"
                 local recipeItems = recipeSource:get(j):getItems()
                 for k=0, recipeItems:size()-1 do
                     items = items.." "..recipeItems:get(k)
                 end
-                print(items)
+                print(items)]]
             end
         end
     end

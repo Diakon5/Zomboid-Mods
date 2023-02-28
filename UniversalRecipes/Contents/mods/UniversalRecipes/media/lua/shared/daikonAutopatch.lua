@@ -17,8 +17,9 @@ local function patchRecipes()
         sugar = "[Recipe.GetItemTypes.Sugar]",
         rice = "[Recipe.GetItemTypes.Rice]",
         sewingNeedle = "[Recipe.GetItemTypes.SewingNeedle]",
-
     }
+    local checkArray = ArrayList.new("Base.KitchenKnife", "Base.Machete", "Base.FlintKnife", "Base.HuntingKnife", "Base.MeatCleaver")
+    print(checkArray)
     ---@type ScriptManager
     local scriptManager = ScriptManager.instance
     ---@type ArrayList
@@ -38,13 +39,14 @@ local function patchRecipes()
                     recipe:DoSource("keep ".. scriptItems.weldingMasks)
                     print("Patched Recipe "..recipe:getName())
                 end
+                print(recipeItems)
                 --replace with actual patcher code
-                --[[local items = recipe:getName().."\n"
-                local recipeItems = recipeSource:get(j):getItems()
+                local items = recipe:getName().."\n"
+                --local recipeItems = recipeSource:get(j):getItems()
                 for k=0, recipeItems:size()-1 do
                     items = items.." "..recipeItems:get(k)
                 end
-                print(items)]]
+                print(items)
             end
         end
     end

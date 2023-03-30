@@ -1,0 +1,7 @@
+Sandbox_EN = {
+    Sandbox_DaikonJarFoodSpoil  = "Jarred Food Spoilage Adjuster",
+    
+    Sandbox_FreshMultiplier = "Multiplier to the base time it takes for the jarred food to spoil(or become stale)(at 1 it's 60 days)",
+    Sandbox_FullRottenMultiplier = "Multiplier to the base time it takes for the food to become rotten(at 1 it's 90 )",
+
+	}

@@ -1,0 +1,5 @@
+Sandbox_EN = {
+    Sandbox_DaikonSturdyTires  = "Sturdy Tires",
+    Sandbox_DST_DurabilityMulti = "Durability Multiplier",
+    Sandbox_DST_DurabilityMulti_tooltip = "This is a flat multiplier on the durability,",
+	}

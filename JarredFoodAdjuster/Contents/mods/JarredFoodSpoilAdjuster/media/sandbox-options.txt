@@ -1,0 +1,12 @@
+VERSION = 1,
+
+option DaikonJarFoodSpoil.FreshMultiplier
+{
+	type = double, min = 0.1, max = 1000, default = 4,
+	page = DaikonJarFoodSpoil, translation = FreshMultiplier,
+}
+option DaikonJarFoodSpoil.FullRottenMultiplier
+{
+	type = double, min = 0.1, max = 1000, default = 4,
+	page = DaikonJarFoodSpoil, translation = FullRottenMultiplier,
+}

@@ -1,0 +1,4 @@
+name=Panic Reduction Fix
+id=daikonPanicReductionFix
+description=This simple mod fixes an issue with Panic reduction increase over time. By default, the game increases is based on nights passed on the save. This mod adjusts it to be based on time survived as a player
+poster=poster.png

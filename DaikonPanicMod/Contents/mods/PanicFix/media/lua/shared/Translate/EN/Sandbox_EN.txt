@@ -1,0 +1,7 @@
+Sandbox_EN = {
+    Sandbox_DaikonPanicFix  = "Panic Fix",
+    Sandbox_DPF_AddZombieKillsAsMinutes = "Minutes per kill",
+    Sandbox_DPF_AddZombieKillsAsMinutes_tooltip = "Adds this amount of minutes per zombie kill to the character's considered time survived. Set to 0 to disable",
+    Sandbox_DPF_StartingHours = "Starting Hour",
+    Sandbox_DPF_StartingHours_tooltip = "Adds this amount of hours to the character's considered time survived. Set to 0 to disable",
+	}

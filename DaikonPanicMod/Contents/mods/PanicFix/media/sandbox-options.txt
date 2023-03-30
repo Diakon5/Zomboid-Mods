@@ -1,0 +1,12 @@
+VERSION = 1,
+option DaikonPanicFix.AddZombieKillsAsMinutes
+{
+    type = integer, default = 0,min=0,max=100000,
+    page = DaikonPanicFix, translation = DPF_AddZombieKillsAsMinutes,
+}
+
+option DaikonPanicFix.StartingHours
+{
+    type = double, default = 0, min=0, max=100000,
+    page = DaikonPanicFix, translation = DPF_StartingHours,
+}

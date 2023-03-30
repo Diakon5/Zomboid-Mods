@@ -1,0 +1,8 @@
+version=1
+id=2952428006
+title=Sturdier Tires
+description=This mod makes the tire update function not run every time, based on a random number roll set via sandbox settings.
+description=
+description=[h3]This mod was made for the UdderlyRP server, find us on Discord at https://discord.gg/9HUdNf7qGe[/h3]
+tags=Build 41;Balance;Vehicles
+visibility=unlisted

@@ -1,0 +1,10 @@
+module VPR_VehicleRecycle
+{
+	imports
+	{
+		Base
+	}
+	
+
+	
+}

@@ -22,7 +22,6 @@ local function DPF_SetCachedPanicReductionMult(player)
         print("Base Game Multiplier:",baseGameMultiplier, "New Multiplier: ", newMultiplier)
     end
     playerModData['DaikonPanic_ActualMultiplier'] = baseGameMultiplier - newMultiplier
-    player:transmitModData()
 end
 
 ---@param player IsoPlayer

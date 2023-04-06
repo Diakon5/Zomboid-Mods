@@ -33,15 +33,7 @@ Daikon.SandboxOptionsSyncing.ForceClientsToUpdate = function ()
     ModData.transmit("UdderlyDaikonSandboxSyncFix")
 end
 
-local onClientCommand = function(module, command, player, args)
-    if Daikon[module] and Daikon[module][command] then
-        Daikon[module][command](player, args)
-    end
-end
-
-
 if isServer() then
     Events.OnInitGlobalModData.Add(Daikon.SandboxOptionsSyncing.UpdateGlobalModData)
-    Events.OnClientCommand.Add(onClientCommand)
 end
 return Daikon

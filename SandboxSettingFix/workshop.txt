@@ -2,5 +2,7 @@ version=1
 id=2956046897
 title=Sandbox Settings Sync fix
 description=So, ever had an issue where you change a setting over on  the server's sandbox due to popular request, and yet you receive complaints that it hasn't changed? Your settings probably didn't sync over. Offline Players don't get updates... Well, now they will the moment they log in! And More!
+description=
+description=Initially written by UdderlyEvelyn, refined by Daikon
 tags=Framework;Multiplayer
 visibility=unlisted

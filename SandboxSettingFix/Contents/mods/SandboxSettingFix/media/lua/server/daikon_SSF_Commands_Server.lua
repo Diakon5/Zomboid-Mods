@@ -2,7 +2,6 @@ local modName = "SandboxSyncFix"
 local Daikon = require("daikon_WrapperToMakeTheSettingsIG")
 --Udderly Commands
 print("["..modName.."] Initializing UdderlyCommands Server..")
-Daikon.CommandHandlers = {}
 
 Events.OnClientCommand.Add(function(moduleName, command, player, args)
 	--print("["..modName.."] OnClientCommand \""..moduleName.."\", \""..command.."\"..")

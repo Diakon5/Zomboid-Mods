@@ -2,13 +2,7 @@ local Daikon = require("daikon_WrapperToMakeTheSettingsIG")
 
 Daikon.SandboxOptionsSyncing.DownloadSettingsInitial = function ()
     Daikon.SandboxOptionsSyncing.DownloadSettings()
-    Events.OnPlayerUpdate.Remove(Daikon.SandboxOptionsSyncing.DownloadSettings)
-end
-
-Daikon.SandboxOptionsSyncing.AnticheatlessSync = function()
-    if isClient() then -- Check if it's running in MP or SP (Returns true in MP and false in SP)
-        sendClientCommand("SandboxOptionsSyncing", "SyncTheSettingsAnticheat", {});
-    end
+    Events.OnPlayerUpdate.Remove(Daikon.SandboxOptionsSyncing.DownloadSettingsInitial)
 end
 
 Daikon.SandboxOptionsSyncing.DownloadSettings = function ()
@@ -25,6 +19,11 @@ Daikon.SandboxOptionsSyncing.SyncSettings = function(tableName, options)
             ---@type SandboxOptions.SandboxOption
             local option = currentOptions:getOptionByName(key)
             if option ~= nil then
+                if option:getType() == "string" then
+                    if string.sub(value,1,1) == "\"" and string.sub(value,-1,-1) == "\"" then
+                        value = string.sub(value,2,-2)
+                    end
+                end
                 option:asConfigOption():parse(value)
                 print("Updated Sandbox Value: "..key.." -> "..value)
             end
@@ -38,6 +37,5 @@ end
 
 
 Events.OnPlayerUpdate.Add(Daikon.SandboxOptionsSyncing.DownloadSettingsInitial)
---Events.OnPlayerUpdate.Add(Daikon.SandboxOptionsSyncing.AnticheatlessSync)
---Events.OnReceiveGlobalModData.Add(Daikon.SandboxOptionsSyncing.SyncSettings)
+Events.OnReceiveGlobalModData.Add(Daikon.SandboxOptionsSyncing.SyncSettings)
 return Daikon ---> REMEMBER THIS NEEDS TO BE AT THE END OF THE FILE

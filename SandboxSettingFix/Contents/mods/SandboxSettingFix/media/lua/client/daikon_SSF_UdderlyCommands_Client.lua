@@ -106,10 +106,10 @@ Daikon.Commands["RefreshModData"] = function(args)
 	if not Daikon.IsAdmin() then
 		return "You do not have access to this command."
 	else
-		sendClientCommand(modName, "ForceClientsToUpdate", args)
+		sendClientCommand(modName, "RefreshModData", args)
 	end
 end
-Daikon.Commands["RefreshModData"] = function(args)
+Daikon.Commands["RefreshAndUpdate"] = function(args)
 	if not Daikon.IsAdmin() then
 		return "You do not have access to this command."
 	else

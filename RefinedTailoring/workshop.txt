@@ -1,0 +1,10 @@
+version=1
+id=2935814754
+title=Fixable back holes
+description=Ever found that your pristine clothing has one hole you can't patch? Well, now you can. Turns out that all clothing had one more part it covered that wasn't included in the UI, and this fixes that! Just remember that padding on your back doesn't affect your armor stats in any way, it's only cosmetic.
+description=
+description=Full credits to Burryaga for helping me finish the code of this simple mod! Check out his workshop! https://steamcommunity.com/id/zendachi/myworkshopfiles/?appid=108600
+description=
+description=[h3]This mod was made for the UdderlyRP server, find us on Discord at https://discord.gg/9HUdNf7qGe[/h3]
+tags=Build 41;Clothing/Armor;Interface
+visibility=public

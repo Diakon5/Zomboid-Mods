@@ -8,6 +8,8 @@ local Diakon = {
 
 function ISGarmentUI:doPatch(fabric, thread, needle, part, context, submenu)
     --redesign patching of the clothes
+    Diakon.ISGarmentUI.doPatch(self, fabric, thread, needle, part, context, submenu)
+    
 end
 --Need to rewrite the UI as well as recreate some Java Functions.
 function ISGarmentUI:doContextMenu(part, x, y)

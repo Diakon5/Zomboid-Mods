@@ -1,8 +1,22 @@
 local Diakon = {
     ISGarmentUI = {
-        create = ISGarmentUI.create
+        create = ISGarmentUI.create,
+        doContextMenu = ISGarmentUI.doContextMenu,
+        doPatch = ISGarmentUI.doPatch
     }
 }
+
+function ISGarmentUI:doPatch(fabric, thread, needle, part, context, submenu)
+    --redesign patching of the clothes
+end
+--Need to rewrite the UI as well as recreate some Java Functions.
+function ISGarmentUI:doContextMenu(part, x, y)
+    Diakon.ISGarmentUI.doContextMenu(self,part,x,y)
+    --add code for making my own context menu option myself... Maybe
+    ISGarmentUI.instance = self
+end
+
+
 
 function ISGarmentUI:create()
     Diakon.ISGarmentUI.create(self)

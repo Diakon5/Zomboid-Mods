@@ -9,5 +9,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="zdoc-lua" level="application" />
     <orderEntry type="library" name="zomboid" level="application" />
+    <orderEntry type="library" name="zomboid-sources" level="application" />
   </component>
 </module>

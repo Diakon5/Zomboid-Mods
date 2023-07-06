@@ -41,106 +41,22 @@ function Recipe.OnCreate.LoadUses(items, result, player)
 end
 
 function Recipe.OnCreate.LoadUsesOneRope(items, result, player)
-    if instanceof(result, "DrainableComboItem") then
-        local savedUses = items:get(0):getModData().EasyPackingRemainingUses
-        if savedUses then
-            local inventory = player:getInventory()
-            local itemToAdd = result:getFullType()
-            for k,savedUse in pairs(savedUses) do
-                ---@type DrainableComboItem
-                local newItem = inventory:AddItem(itemToAdd)
-                newItem:setDelta(savedUse)
-            end
-        else
-            local inventory = player:getInventory()
-            --result is an inventory item, full type is the ID
-            local itemToAdd = result:getFullType()
-            --items is a non inventory item, so full name is the ID
-            local amount = defaultItemAmounts[items:get(0):getFullType()]
-            for i=1,amount do
-                inventory:AddItem(itemToAdd)
-            end
-            --check static table of items to give
-        end
-    end
+	Recipe.OnCreate.LoadUses(items, result, player)
 	Recipe.OnCreate.Unpack1Rope(items, result, player)
 end
 
 function Recipe.OnCreate.LoadUsesTwoRope(items, result, player)
-    if instanceof(result, "DrainableComboItem") then
-        local savedUses = items:get(0):getModData().EasyPackingRemainingUses
-        if savedUses then
-            local inventory = player:getInventory()
-            local itemToAdd = result:getFullType()
-            for k,savedUse in pairs(savedUses) do
-                ---@type DrainableComboItem
-                local newItem = inventory:AddItem(itemToAdd)
-                newItem:setDelta(savedUse)
-            end
-        else
-            local inventory = player:getInventory()
-            --result is an inventory item, full type is the ID
-            local itemToAdd = result:getFullType()
-            --items is a non inventory item, so full name is the ID
-            local amount = defaultItemAmounts[items:get(0):getFullType()]
-            for i=1,amount do
-                inventory:AddItem(itemToAdd)
-            end
-            --check static table of items to give
-        end
-    end
+    Recipe.OnCreate.LoadUses(items, result, player)
 	Recipe.OnCreate.Unpack2Rope(items, result, player)
 end
 
 function Recipe.OnCreate.LoadUsesOneSheetRope(items, result, player)
-    if instanceof(result, "DrainableComboItem") then
-        local savedUses = items:get(0):getModData().EasyPackingRemainingUses
-        if savedUses then
-            local inventory = player:getInventory()
-            local itemToAdd = result:getFullType()
-            for k,savedUse in pairs(savedUses) do
-                ---@type DrainableComboItem
-                local newItem = inventory:AddItem(itemToAdd)
-                newItem:setDelta(savedUse)
-            end
-        else
-            local inventory = player:getInventory()
-            --result is an inventory item, full type is the ID
-            local itemToAdd = result:getFullType()
-            --items is a non inventory item, so full name is the ID
-            local amount = defaultItemAmounts[items:get(0):getFullType()]
-            for i=1,amount do
-                inventory:AddItem(itemToAdd)
-            end
-            --check static table of items to give
-        end
-    end
+    Recipe.OnCreate.LoadUses(items, result, player)
 	Recipe.OnCreate.Unpack1SheetRope(items, result, player)
 end
 
 function Recipe.OnCreate.LoadUsesTwoSheetRope(items, result, player)
-    if instanceof(result, "DrainableComboItem") then
-        local savedUses = items:get(0):getModData().EasyPackingRemainingUses
-        if savedUses then
-            local inventory = player:getInventory()
-            local itemToAdd = result:getFullType()
-            for k,savedUse in pairs(savedUses) do
-                ---@type DrainableComboItem
-                local newItem = inventory:AddItem(itemToAdd)
-                newItem:setDelta(savedUse)
-            end
-        else
-            local inventory = player:getInventory()
-            --result is an inventory item, full type is the ID
-            local itemToAdd = result:getFullType()
-            --items is a non inventory item, so full name is the ID
-            local amount = defaultItemAmounts[items:get(0):getFullType()]
-            for i=1,amount do
-                inventory:AddItem(itemToAdd)
-            end
-            --check static table of items to give
-        end
-    end
+   	Recipe.OnCreate.LoadUses(items, result, player)
 	Recipe.OnCreate.Unpack2SheetRope(items, result, player)
 end
 

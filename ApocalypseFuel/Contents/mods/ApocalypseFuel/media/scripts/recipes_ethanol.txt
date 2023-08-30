@@ -1,0 +1,127 @@
+ module Biofuels
+ {
+     imports
+     {
+     	Base,
+     }
+    recipe PreparePotMash
+    {
+        Pot,
+        RawMash=30,
+        Water=20,
+        Sheet,
+        [Recipe.GetItemTypes.CraftLogStack],
+        noBrokenItems:true,
+        Result:FreshMashPot,
+        SkillRequired:Cooking = 2,
+        Time:400.0,
+        Category:Cooking,
+        CanBeDoneFromFloor:true,
+        NeedToBeLearn: False,
+        OnCreate:Recipe.OnCreate.RememberTheRopeUsed,
+        OnGiveXP:Recipe.OnGiveXP.None,
+    }
+    recipe PrepareBucketMash
+    {
+        [Recipe.GetItemTypes.Bucket],
+        RawMash=30,
+        Water=20,
+        Sheet,
+        [Recipe.GetItemTypes.CraftLogStack],
+        noBrokenItems:true,
+        Result:FreshMashPot,
+        SkillRequired:Cooking = 2,
+        Time:400.0,
+        Category:Cooking,
+        CanBeDoneFromFloor:true,
+        NeedToBeLearn: False,
+        OnCreate:Recipe.OnCreate.RememberTheBucketAndRopeUsed,
+        OnGiveXP:Recipe.OnGiveXP.None,
+    }
+    recipe RawMashFromPotato
+    {
+        keep MortarPestle,
+        Potato=1,
+
+        noBrokenItems:true,
+        Result:RawMash,
+        SkillRequired:Cooking = 1,
+        Time:40.0,
+        Category:Cooking,
+        CanBeDoneFromFloor:true,
+        NeedToBeLearn: False,
+        OnGiveXP:Recipe.OnGiveXP.None,
+    }
+    recipe RawMashFromCarrot
+    {
+        keep MortarPestle,
+        Carrots=2,
+
+        noBrokenItems:true,
+        Result:RawMash,
+        SkillRequired:Cooking = 1,
+        Time:40.0,
+        Category:Cooking,
+        CanBeDoneFromFloor:true,
+        NeedToBeLearn: False,
+        OnGiveXP:Recipe.OnGiveXP.None,
+    }
+    recipe RawMashFromCorn
+    {
+        keep MortarPestle,
+        Corn=1,
+
+        noBrokenItems:true,
+        Result:RawMash,
+        SkillRequired:Cooking = 1,
+        Time:40.0,
+        Category:Cooking,
+        CanBeDoneFromFloor:true,
+        NeedToBeLearn: False,
+        OnGiveXP:Recipe.OnGiveXP.None,
+    }
+    recipe RawMashFromEggplant
+    {
+        keep MortarPestle,
+        Eggplant=1,
+
+        noBrokenItems:true,
+        Result:RawMash,
+        SkillRequired:Cooking = 1,
+        Time:40.0,
+        Category:Cooking,
+        CanBeDoneFromFloor:true,
+        NeedToBeLearn: False,
+        OnGiveXP:Recipe.OnGiveXP.None,
+    }
+    recipe PreparePotForDistilling
+    {
+        FermentedMashPot=1,
+        Saucepan,
+        Tarp,
+        noBrokenItems:true,
+        Result:ReadyToDistillPot,
+        SkillRequired:Cooking = 1,
+        Time:40.0,
+        Category:Cooking,
+        CanBeDoneFromFloor:true,
+        NeedToBeLearn: False,
+        OnCreate:Recipe.OnCreate.PrepareForDistilling,
+        OnGiveXP:Recipe.OnGiveXP.None,
+    }
+    recipe PrepareBucketForDistilling
+    {
+        FermentedMashBucket=1,
+        Saucepan,
+        Tarp,
+        noBrokenItems:true,
+        Result:ReadyToDistillPot,
+        SkillRequired:Cooking = 1,
+        Time:40.0,
+        Category:Cooking,
+        CanBeDoneFromFloor:true,
+        NeedToBeLearn: False,
+        OnCreate:Recipe.OnCreate.PrepareForDistilling,
+        OnGiveXP:Recipe.OnGiveXP.None,
+    }
+}

@@ -8,6 +8,9 @@ local function addExistingItemType(scriptItems, type)
     end
 end
 
+function Recipe.OnTest.CheckIfPotIsCooked(item)
+
+end
 function Recipe.OnCreate.SaveNutritionInResult(items, result, player)
     local finalvalue = {}
     for i=0,items:size() - 1 do

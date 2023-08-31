@@ -182,4 +182,22 @@ module Biofuels
         WorldStaticModel = BucketFullWater_Ground,
         Tags = HasMetal,
     }
+    item SaucepanWithEthanol
+    {
+		DisplayName = Saucepan with Ethanol,
+		DisplayCategory = Food,
+		Type = Drainable,
+		Weight = 2,
+		Icon = SaucepanEmpty,
+		ConditionMax = 10,
+		EatType = Kettle,
+		FillFromDispenserSound = GetWaterFromDispenserMetalMedium,
+		FillFromTapSound = GetWaterFromTapMetalMedium,
+		ReplaceOnDeplete = Saucepan,
+		UseDelta = 0.05,
+		UseWhileEquipped = FALSE,
+		StaticModel = SaucePan,
+		WorldStaticModel = WaterSaucepan,
+		Tags = HasMetal,
+    }
 }

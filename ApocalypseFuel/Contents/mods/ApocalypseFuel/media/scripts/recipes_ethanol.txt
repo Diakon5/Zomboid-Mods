@@ -117,11 +117,37 @@
         noBrokenItems:true,
         Result:ReadyToDistillPot,
         SkillRequired:Cooking = 1,
-        Time:40.0,
+        Time:80.0,
         Category:Cooking,
         CanBeDoneFromFloor:true,
         NeedToBeLearn: False,
         OnCreate:Recipe.OnCreate.PrepareForDistilling,
+        OnGiveXP:Recipe.OnGiveXP.None,
+    }
+    recipe DismantleDistilledPot
+    {
+        ReadyToDistillPot,
+        noBrokenItems:true,
+        Result:SaucepanWithEthanol,
+        Time:80.0,
+        Category:Cooking,
+        CanBeDoneFromFloor:true,
+        NeedToBeLearn: False,
+        OnTest:Recipe.OnTest.CheckIfPotIsCooked,
+        OnCreate:Recipe.OnCreate.ReturnDistillationItems,
+        OnGiveXP:Recipe.OnGiveXP.None,
+    }
+    recipe DismantleDistilledBucket
+    {
+        ReadyToDistillBucket,
+        noBrokenItems:true,
+        Result:SaucepanWithEthanol,
+        Time:80.0,
+        Category:Cooking,
+        CanBeDoneFromFloor:true,
+        NeedToBeLearn: False,
+        OnTest:Recipe.OnTest.CheckIfPotIsCooked,
+        OnCreate:Recipe.OnCreate.ReturnDistillationItems,
         OnGiveXP:Recipe.OnGiveXP.None,
     }
 }

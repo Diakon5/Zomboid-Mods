@@ -8,9 +8,12 @@ local function addExistingItemType(scriptItems, type)
     end
 end
 
+---@param item InventoryItem
 function Recipe.OnTest.CheckIfPotIsCooked(item)
-
+    if not string.find(item:getType(),"ReadyToDistill",1,true) then return true end
+    return item:isCooked()
 end
+
 function Recipe.OnCreate.SaveNutritionInResult(items, result, player)
     local finalvalue = {}
     for i=0,items:size() - 1 do
@@ -78,11 +81,16 @@ function Recipe.OnCreate.PrepareForDistilling(items,result,player)
             if string.find(item:getType(),"FermentedMash",1,true) then
                 player:getInventory():AddItem(item:getModData().ropeItems or "Base.Rope")
                 player:getInventory():AddItem("Base.Sheet")
-                if string.find(item:getType(),"Bucket",1,true) then
-                    player:getInventory():AddItem(item:getModData().bucketType or "Base.BucketEmpty")
-                end
             end
         end
     end
+end
 
+function Recipe.OnCreate.ReturnDistillationItems(items,result,player)
+    player:getInventory():AddItem("Base.Tarp")
+    if string.find(item:getType(),"Bucket",1,true) then
+        player:getInventory():AddItem(item:getModData().bucketType or "Base.BucketEmpty")
+    else
+        player:getInventory():AddItem("Base.Pot")
+    end
 end

@@ -189,7 +189,7 @@ module Biofuels
 		Type = Drainable,
 		Weight = 2,
 		Icon = SaucepanEmpty,
-		ConditionMax = 10,
+		ConditionMax = 5,
 		EatType = Kettle,
 		FillFromDispenserSound = GetWaterFromDispenserMetalMedium,
 		FillFromTapSound = GetWaterFromTapMetalMedium,

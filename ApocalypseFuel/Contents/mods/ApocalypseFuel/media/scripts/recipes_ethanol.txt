@@ -102,7 +102,7 @@
         noBrokenItems:true,
         Result:ReadyToDistillPot,
         SkillRequired:Cooking = 1,
-        Time:40.0,
+        Time:80.0,
         Category:Cooking,
         CanBeDoneFromFloor:true,
         NeedToBeLearn: False,

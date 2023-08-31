@@ -86,6 +86,7 @@ function Recipe.OnCreate.PrepareForDistilling(items,result,player)
     end
 end
 
+---@param result DrainableComboItem
 function Recipe.OnCreate.ReturnDistillationItems(items,result,player)
     player:getInventory():AddItem("Base.Tarp")
     if string.find(item:getType(),"Bucket",1,true) then
@@ -93,4 +94,6 @@ function Recipe.OnCreate.ReturnDistillationItems(items,result,player)
     else
         player:getInventory():AddItem("Base.Pot")
     end
+    result:setCondition(items:get(0):getCondition())
+    result:setDelta(1/4)
 end

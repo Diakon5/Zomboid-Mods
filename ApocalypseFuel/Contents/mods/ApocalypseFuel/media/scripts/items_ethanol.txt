@@ -184,13 +184,12 @@ module Biofuels
     }
     item SaucepanWithEthanol
     {
-		DisplayName = Saucepan with Ethanol,
+		DisplayName = Saucepan with ethanol,
 		DisplayCategory = Food,
 		Type = Drainable,
 		Weight = 2,
 		Icon = SaucepanEmpty,
 		ConditionMax = 5,
-		EatType = Kettle,
 		FillFromDispenserSound = GetWaterFromDispenserMetalMedium,
 		FillFromTapSound = GetWaterFromTapMetalMedium,
 		ReplaceOnDeplete = Saucepan,
@@ -198,6 +197,51 @@ module Biofuels
 		UseWhileEquipped = FALSE,
 		StaticModel = SaucePan,
 		WorldStaticModel = WaterSaucepan,
-		Tags = HasMetal,
+		Tags = HasMetal,ApoFuelEthanol
     }
+    item PotWithEthanol
+    {
+		DisplayName = Cooking pot with ethanol,
+		DisplayCategory = Food,
+		Type = Drainable,
+		Weight = 2,
+		Icon = PotFull,
+		EatType = Kettle,
+		FillFromDispenserSound = GetWaterFromDispenserMetalMedium,
+		FillFromTapSound = GetWaterFromTapMetalMedium,
+		ReplaceOnDeplete = Pot,
+		UseDelta = 0.04,
+		UseWhileEquipped = FALSE,
+		StaticModel = CookingPot,
+		WorldStaticModel = CookingPotSoup_Ground,
+		Tags = HasMetal,ApoFuelEthanol
+    }
+	item MoonshineBottleFull
+	{
+		DisplayName = Moonshine Bottle,
+		DisplayCategory = Food,
+		Type = Food,
+		Weight = 0.7,
+		Icon = WhiskeyFull,
+		EvolvedRecipe = Beverage:4;Beverage2:4;HotDrink:4;HotDrinkRed:4;HotDrinkWhite:4;HotDrinkSpiffo:4;HotDrinkTea:4,
+		FoodType = Liquor,
+		AlcoholPower = 2,
+		Alcoholic = TRUE,
+		CantBeFrozen = TRUE,
+		EatType = Bourbon,
+		Packaged = TRUE,
+		ReplaceOnUse = WhiskeyEmpty,
+		HungerChange = -20,
+		ThirstChange = -20,
+		UnhappyChange = -10,
+		Calories = 500,
+		Carbohydrates = 0,
+		Lipids = 0,
+		Proteins = 0,
+		CustomContextMenu = Drink,
+		CustomEatSound = DrinkingFromBottleGlass,
+		StaticModel = WhiskeyBottle,
+		WorldStaticModel = WhiskeyBottleGround,
+		Tags = Liquor,
+	}
 }

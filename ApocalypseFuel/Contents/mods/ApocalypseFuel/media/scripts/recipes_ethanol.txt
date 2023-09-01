@@ -150,4 +150,24 @@
         OnCreate:Recipe.OnCreate.ReturnDistillationItems,
         OnGiveXP:Recipe.OnGiveXP.None,
     }
+    recipe MixMoonshineInVodkaBottle
+    {
+        WhiskeyEmpty,
+        Water=7,
+        [Recipe.GetItemTypes.ApoFuelEthanol]=5,
+        Result:MoonshineBottleFull,
+        Time:80.0,
+        Category:Cooking,
+        CanBeDoneFromFloor:true,
+        NeedToBeLearn: False,
+        OnGiveXP:Recipe.OnGiveXP.None,
+    }
+    recipe MixPetrolIntoBottle
+    {
+        [Recipe.GetItemTypes.ApoFuelEmptyPetrol],
+        [Recipe.GetItemTypes.ApoFuelEthanol]=5,
+        Soap2=2,
+        Result:PetrolCan,
+        RemoveResultItem:True
+    }
 }

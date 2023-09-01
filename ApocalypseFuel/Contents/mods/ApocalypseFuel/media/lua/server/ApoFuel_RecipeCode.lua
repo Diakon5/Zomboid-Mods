@@ -33,6 +33,14 @@ function Recipe.OnCreate.SaveNutritionInResult(items, result, player)
     result:setCalories(finalvalue["Calories"])
 end
 
+function Recipe.GetItemTypes.ApoFuelEthanol(scriptItems)
+    scriptItems:addAll(getScriptManager():getItemsTag("ApoFuelEthanol"))
+end
+
+function Recipe.GetItemTypes.ApoFuelEmptyPetrol(scriptItems)
+    scriptItems:addAll(getScriptManager():getItemsTag("EmptyPetrol"))
+end
+
 function Recipe.GetItemTypes.Bucket(scriptItems)
     scriptItems:addAll(getScriptManager():getItemsTag("Bucket"))
     addExistingItemType(scriptItems, "BucketEmpty")
@@ -89,7 +97,7 @@ end
 ---@param result DrainableComboItem
 function Recipe.OnCreate.ReturnDistillationItems(items,result,player)
     player:getInventory():AddItem("Base.Tarp")
-    if string.find(item:getType(),"Bucket",1,true) then
+    if string.find(items:get(0):getType(),"Bucket",1,true) then
         player:getInventory():AddItem(item:getModData().bucketType or "Base.BucketEmpty")
     else
         player:getInventory():AddItem("Base.Pot")

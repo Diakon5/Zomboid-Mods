@@ -168,6 +168,12 @@
         [Recipe.GetItemTypes.ApoFuelEthanol]=5,
         Soap2=2,
         Result:PetrolCan,
-        RemoveResultItem:True
+        RemoveResultItem:True,
+        Time:80.0,
+        Category:Cooking,
+        CanBeDoneFromFloor:true,
+        NeedToBeLearn: False,
+        OnCreate:Recipe.OnCreate.CreatePetrolManual,
+        OnGiveXP:Recipe.OnGiveXP.None,
     }
 }

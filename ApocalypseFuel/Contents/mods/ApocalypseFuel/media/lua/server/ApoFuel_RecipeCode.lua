@@ -105,3 +105,15 @@ function Recipe.OnCreate.ReturnDistillationItems(items,result,player)
     result:setCondition(items:get(0):getCondition())
     result:setDelta(1/4)
 end
+
+function Recipe.OnCreate.CreatePetrolManual(items,result,player)
+    for i = 0, items:size() - 1 do
+        ---@type InventoryItem
+        local item = items:get(i)
+        if item and item:hasTag("EmptyPetrol") then
+            local fuelContainerType = item:getReplaceTypesMap():get("PetrolSource")
+            local fuelItem = player:getInventory():AddItem(fuelContainerType)
+            fuelItem:setDelta(fuelItem:getUseDelta())
+        end
+    end
+end

@@ -67,7 +67,7 @@ module Biofuels
         PoisonPower = 120,
         IsCookable = false,
         ReplaceOnUse = Pot,
-        AlcoholPower = 2
+        AlcoholPower = 2,
         MinutesToCook = 60,
         MinutesToBurn = 60,
         DaysFresh = 14,
@@ -127,7 +127,7 @@ module Biofuels
         PoisonPower = 150,
         IsCookable = false,
         ReplaceOnUse = BucketEmpty,
-        AlcoholPower = 2
+        AlcoholPower = 2,
         MinutesToCook = 60,
         MinutesToBurn = 60,
         DaysFresh = 14,
@@ -150,14 +150,15 @@ module Biofuels
     {
         DisplayName = Distilling Pot of Mash,
         DisplayCategory = Food,
-        Type = Normal,
+        Type = Food,
         Weight = 5,
         Icon = PotFull,
         CookingSound = BoilingFood,
-        IsCookable = true,
-        AlcoholPower = 4
+        IsCookable = True,
+        AlcoholPower = 4,
+		CantEat = TRUE,
         MinutesToCook = 300,
-        MinutesToBurn = 60,
+        MinutesToBurn = 330,
         DaysFresh = 14,
         DaysTotallyRotten = 28,
         StaticModel = CookingPot,
@@ -168,16 +169,17 @@ module Biofuels
     {
         DisplayName = Distilling Bucket of Mash,
         DisplayCategory = Food,
-        Type = Normal,
+        Type = Food,
         Weight = 5,
         Icon = PotFull,
         CookingSound = BoilingFood,
         PoisonPower = 150,
-        IsCookable = true,
+        IsCookable = True,
+		CantEat = TRUE,
         MinutesToCook = 300,
-        MinutesToBurn = 60,
+        MinutesToBurn = 330,
         DaysFresh = 14,
-        DaysTotallyRotten = 28,
+        DaysTotallyRotten = 14,
         StaticModel = CookingPot,
         WorldStaticModel = BucketFullWater_Ground,
         Tags = HasMetal,
@@ -197,7 +199,7 @@ module Biofuels
 		UseWhileEquipped = FALSE,
 		StaticModel = SaucePan,
 		WorldStaticModel = WaterSaucepan,
-		Tags = HasMetal,ApoFuelEthanol
+		Tags = HasMetal;ApoFuelEthanol,
     }
     item PotWithEthanol
     {
@@ -214,7 +216,7 @@ module Biofuels
 		UseWhileEquipped = FALSE,
 		StaticModel = CookingPot,
 		WorldStaticModel = CookingPotSoup_Ground,
-		Tags = HasMetal,ApoFuelEthanol
+		Tags = HasMetal;ApoFuelEthanol,
     }
 	item MoonshineBottleFull
 	{

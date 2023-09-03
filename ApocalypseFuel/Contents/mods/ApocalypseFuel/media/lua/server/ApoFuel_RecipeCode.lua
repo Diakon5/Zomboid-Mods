@@ -98,7 +98,7 @@ end
 function Recipe.OnCreate.ReturnDistillationItems(items,result,player)
     player:getInventory():AddItem("Base.Tarp")
     if string.find(items:get(0):getType(),"Bucket",1,true) then
-        player:getInventory():AddItem(item:getModData().bucketType or "Base.BucketEmpty")
+        player:getInventory():AddItem(items:get(0):getModData().bucketType or "Base.BucketEmpty")
     else
         player:getInventory():AddItem("Base.Pot")
     end

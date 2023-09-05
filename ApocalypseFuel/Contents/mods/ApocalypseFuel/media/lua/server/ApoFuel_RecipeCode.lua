@@ -111,7 +111,7 @@ function Recipe.OnCreate.CreatePetrolManual(items,result,player)
         ---@type InventoryItem
         local item = items:get(i)
         if item and item:hasTag("EmptyPetrol") then
-            local fuelContainerType = item:getReplaceTypesMap():get("PetrolSource")
+            local fuelContainerType = item:getReplaceType("PetrolSource")
             local fuelItem = player:getInventory():AddItem(fuelContainerType)
             fuelItem:setDelta(fuelItem:getUseDelta())
         end

@@ -3,9 +3,15 @@ local ApocalypseBiofuels = Daikon.ApocalypseBiofuels or {}
 Daikon.ApocalypseBiofuels.PourEthanolContextMenu = function(player, context, items)
     ---@type IsoGameCharacter
     player = getSpecificPlayer(player)
+    print(items)
+    print(context)
+    for k,v in ipairs(items) do
+        print(v:getType())
+    end
+
     --TODO Write a check to see if item holds ethanol
     --Checks if... And if the selected item is a water container
-    if c == 1 and waterContainer ~= nil then
+--[[    if c == 1 and waterContainer ~= nil then
         --Iterates over player inventory to find other items that can be poured into
         for i = 0, getSpecificPlayer(player):getInventory():getItems():size() -1 do
             local item = getSpecificPlayer(player):getInventory():getItems():get(i);
@@ -40,7 +46,8 @@ Daikon.ApocalypseBiofuels.PourEthanolContextMenu = function(player, context, ite
         end
 
         context:addOption(getText("ContextMenu_Pour_on_Ground"), items, ISInventoryPaneContextMenu.onEmptyWaterContainer, waterContainer, player);
-    end
+   end
+   --]]
 end
 
 

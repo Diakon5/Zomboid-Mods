@@ -2,16 +2,26 @@ local Daikon = require("moduleFile")
 ---@param context ISContextMenu
 
 Daikon.ApocalypseBiofuels.PourEthanolContextMenu = function(player, context, items)
+    print(#items)
     ---@type IsoGameCharacter
     player = getSpecificPlayer(player)
+    local ethanolItem
     for _, v in ipairs(items) do
-
         ---@type InventoryItem
-        local item = v
-        if not instanceof(v, "InventoryItem") then item = v.items[1] end
-        print(item)
+        ethanolItem= v
+        if not instanceof(v, "InventoryItem") then ethanolItem = v.items[1] end
+        --print(ethanolItem)
     end
-
+    if ethanolItem:hasTag("ApoFuelEthanol") and ethanolItem:getDelta()>0 then
+        local Array = Arraylist.new()
+        ---@type InventoryContainer
+        local inventory = player:getInventory()
+        local fuelItems = inventory:getAllTag("ApoFuelEthanol",Array)
+        print(fuelItems)
+        for i=0,fuelItems:size() do
+            print(fuelItems:get(i):getType())
+        end
+    end
 
     --TODO Write a check to see if item holds ethanol
     --Checks if... And if the selected item is a water container

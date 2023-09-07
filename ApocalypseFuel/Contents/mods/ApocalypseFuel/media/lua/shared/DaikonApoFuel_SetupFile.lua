@@ -3,7 +3,7 @@ Daikon.ApocalypseBiofuels = {}
 Daikon.ApocalypseBiofuels.ItemsToMakeEthanolContainers = {
     "Base.Saucepan" = "Biofuels.SaucepanWithEthanol",
     "Base.Pot" = "Biofuels.PotWithEthanol",
-    "Base.BleachEmpty",
+    "Base.BleachEmpty" = "Biofuels.BleachBottleWithEthanol",
     "Base.PopBottleEmpty",
     "Base.WaterBottleEmpty",
     "Base.WhiskeyEmpty",
@@ -11,4 +11,7 @@ Daikon.ApocalypseBiofuels.ItemsToMakeEthanolContainers = {
     "Base.WineEmpty2"
 }
 
+for emptyItem, fullItem in pairs(Daikon.ApocalypseBiofuels.ItemsToMakeEthanolContainers) do
+
+end
 return Daikon

@@ -38,4 +38,40 @@ module Biofuels
         WorldStaticModel = CookingPotSoup_Ground,
         Tags = HasMetal;ApoFuelEthanol,
     }
+    item BleachBottleWithEthanol
+    {
+        DisplayName = Bleach Bottle With Ethanol,
+        DisplayCategory = Water,
+        Type = Drainable,
+        Weight = 1.6,
+        Icon = Bleach,
+        FillFromDispenserSound = GetWaterFromDispenserPlasticBig,
+        FillFromTapSound = GetWaterFromTapPlasticBig,
+        ReplaceOnDeplete = BleachEmpty,
+        UseDelta = 0.1,
+        UseWhileEquipped = FALSE,
+        CustomEatSound = DrinkingFromBottlePlastic,
+        StaticModel = BleachBottle,
+        WorldStaticModel = BleachBottle,
+        Tooltip = Tooltip_item_OnlyPurifyMicrowave,
+        Tags: ApoFuelEthanol,
+    }
+
+    item WaterBottleWithEthanol
+    {
+        DisplayName = Water Bottle with Ethanol,
+        DisplayCategory = Water,
+        Type = Drainable,
+        Weight = 0.8,
+        Icon = WaterBottle_Full,
+        FillFromDispenserSound = GetWaterFromDispenserPlasticMedium,
+        FillFromTapSound = GetWaterFromTapPlasticMedium,
+        ReplaceOnDeplete = WaterBottleEmpty,
+        UseDelta = 0.1,
+        UseWhileEquipped = FALSE,
+        CustomEatSound = DrinkingFromBottlePlastic,
+        StaticModel = WaterBottle,
+        WorldStaticModel = WaterBottleFull,
+        Tooltip = Tooltip_item_OnlyPurifyMicrowave,
+    }
 }

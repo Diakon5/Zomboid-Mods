@@ -11,10 +11,14 @@ Daikon.ApocalypseBiofuels.ItemsToMakeEthanolContainers = {
     ["Base.WineEmpty"] = "Biofuels.WineBottleWithEthanol",
     ["Base.WineEmpty2"] = "Biofuels.WineBottleWithEthanol"
 }
-local ScriptManager = ScriptManager.instance
-for emptyItem, fullItem in pairs(Daikon.ApocalypseBiofuels.ItemsToMakeEthanolContainers) do
-    local emptyItemActualItem = ScriptManager:getItem(emptyItem)
-    emptyItemActualItem:getTags():add("ApoFuelEmptyEthanol")
-    emptyItemActualItem:getReplaceTypesMap():putMapEntries(emptyItem,fullItem)
+Daikon.ApocalypseBiofuels.PatchItemsToEthanol = function()
+    local ScriptManager = ScriptManager.instance
+    for emptyItem, fullItem in pairs(Daikon.ApocalypseBiofuels.ItemsToMakeEthanolContainers) do
+        local emptyItemActualItem = ScriptManager:getItem(emptyItem)
+        emptyItemActualItem:getTags():add("ApoFuelEmptyEthanol")
+        emptyItemActualItem:getReplaceTypesMap():putMapEntries(emptyItem,fullItem)
+    end
 end
+
+Events.OnGameBoot.Add(Daikon.ApocalypseBiofuels.PatchItemsToEthanol)
 return Daikon

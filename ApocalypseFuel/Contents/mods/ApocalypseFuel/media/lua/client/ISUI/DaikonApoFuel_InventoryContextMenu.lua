@@ -31,22 +31,17 @@ Daikon.ApocalypseBiofuels.PourEthanolContextMenu = function(player, context, ite
                 end
             end
         end
+        if #eligibleFuelItems >0 then
+            local subMenuOption = context:addOption(getText("ContextMenu_Pour_into"), items, nil);
+            local subMenu = context:getNew(context)
+            --adding the submenu?
+            context:addSubMenu(subMenuOption, subMenu)
+        end
     end
 
     --TODO Write a check to see if item holds ethanol
     --Checks if... And if the selected item is a water container
-    --[[    if c == 1 and waterContainer ~= nil then
-            --Iterates over player inventory to find other items that can be poured into
-            for i = 0, getSpecificPlayer(player):getInventory():getItems():size() -1 do
-                local item = getSpecificPlayer(player):getInventory():getItems():get(i);
-                --empty containers
-                if item ~= waterContainer and item:canStoreWater() and not item:isWaterSource() then
-                    table.insert(pourInto, item)
-                --partially full containers
-                elseif item ~= waterContainer and item:canStoreWater() and item:isWaterSource() and instanceof(item, "DrainableComboItem") and (1 - item:getUsedDelta()) >= item:getUseDelta() then
-                    table.insert(pourInto, item)
-                end
-            end
+    --[[
             --if there are any containers
             if #pourInto > 0 then
                 --subMenu

@@ -1,4 +1,4 @@
-local Daikon = require("moduleFile")
+local Daikon = require("DaikonApoFuel_SetupFile")
 
 ---@param context ISContextMenu
 Daikon.ApocalypseBiofuels.PourEthanolContextMenu = function(player, context, items)
@@ -22,8 +22,9 @@ Daikon.ApocalypseBiofuels.PourEthanolContextMenu = function(player, context, ite
             local fuelItem = fuelItemsFull:get(i)
             if fuelItem:getDelta()<1 and fuelItem ~= ethanolItem then
                 table.insert(fuelItem)
+                print(fuelItem:getType(), "ValidFuelItem")
             end
-            print(fuelItem:getType())
+
         end
     end
 

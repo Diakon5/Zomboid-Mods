@@ -1,0 +1,41 @@
+module Biofuels
+{
+    imports
+    {
+    	Base,
+    }
+    item SaucepanWithEthanol
+    {
+        DisplayName = Saucepan with ethanol,
+        DisplayCategory = Food,
+        Type = Drainable,
+        Weight = 2,
+        Icon = SaucepanEmpty,
+        ConditionMax = 5,
+        FillFromDispenserSound = GetWaterFromDispenserMetalMedium,
+        FillFromTapSound = GetWaterFromTapMetalMedium,
+        ReplaceOnDeplete = Saucepan,
+        UseDelta = 0.05,
+        UseWhileEquipped = FALSE,
+        StaticModel = SaucePan,
+        WorldStaticModel = WaterSaucepan,
+        Tags = HasMetal;ApoFuelEthanol,
+    }
+    item PotWithEthanol
+    {
+        DisplayName = Cooking pot with ethanol,
+        DisplayCategory = Food,
+        Type = Drainable,
+        Weight = 2,
+        Icon = PotFull,
+        EatType = Kettle,
+        FillFromDispenserSound = GetWaterFromDispenserMetalMedium,
+        FillFromTapSound = GetWaterFromTapMetalMedium,
+        ReplaceOnDeplete = Pot,
+        UseDelta = 0.04,
+        UseWhileEquipped = FALSE,
+        StaticModel = CookingPot,
+        WorldStaticModel = CookingPotSoup_Ground,
+        Tags = HasMetal;ApoFuelEthanol,
+    }
+}

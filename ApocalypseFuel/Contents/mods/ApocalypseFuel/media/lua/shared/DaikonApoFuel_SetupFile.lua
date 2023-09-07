@@ -14,9 +14,10 @@ Daikon.ApocalypseBiofuels.ItemsToMakeEthanolContainers = {
 Daikon.ApocalypseBiofuels.PatchItemsToEthanol = function()
     local ScriptManager = ScriptManager.instance
     for emptyItem, fullItem in pairs(Daikon.ApocalypseBiofuels.ItemsToMakeEthanolContainers) do
+        ---@type Item
         local emptyItemActualItem = ScriptManager:getItem(emptyItem)
         emptyItemActualItem:getTags():add("ApoFuelEmptyEthanol")
-        emptyItemActualItem:getReplaceTypesMap():putMapEntries(emptyItem,fullItem)
+        emptyItemActualItem:getReplaceTypesMap():put("EthanolSource",fullItem)
     end
 end
 

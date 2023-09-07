@@ -6,7 +6,7 @@ module Biofuels
     }
     item SaucepanWithEthanol
     {
-        DisplayName = Saucepan with ethanol,
+        DisplayName = Saucepan with Ethanol,
         DisplayCategory = Food,
         Type = Drainable,
         Weight = 2,

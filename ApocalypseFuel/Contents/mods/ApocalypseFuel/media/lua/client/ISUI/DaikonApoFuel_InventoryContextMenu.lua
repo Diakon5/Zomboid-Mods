@@ -22,12 +22,16 @@ Daikon.ApocalypseBiofuels.PourEthanolContextMenu = function(player, context, ite
             ---@type InventoryItem
             local fuelItem = fuelItemsFull:get(i)
             if fuelItem ~= ethanolItem then
-                if instanceof(fuelItem,"DrainableComboItem") and fuelItem:getDelta()<1 then
-                    table.insert(eligibleFuelItems,fuelItem)
-                    print(fuelItem:getType(), "ValidFuelItem")
+                if instanceof(fuelItem,"DrainableComboItem") then
+                    --Had to nest here, otherwise full drainables would get caught by the else condition
+                    if fuelItem:getDelta()<1 then
+                        table.insert(eligibleFuelItems,fuelItem)
+                    end
+
+                    --print(fuelItem:getType(), " ValidFuelItem with "..fuelItem:getDelta())
                 else
                     table.insert(eligibleFuelItems,fuelItem)
-                    print(fuelItem:getType(), "ValidEmptyFuelItem")
+                    --print(fuelItem:getType(), "ValidEmptyFuelItem")
                 end
             end
         end
@@ -36,38 +40,73 @@ Daikon.ApocalypseBiofuels.PourEthanolContextMenu = function(player, context, ite
             local subMenu = context:getNew(context)
             --adding the submenu?
             context:addSubMenu(subMenuOption, subMenu)
-        end
-    end
-
-    --TODO Write a check to see if item holds ethanol
-    --Checks if... And if the selected item is a water container
-    --[[
-            --if there are any containers
-            if #pourInto > 0 then
-                --subMenu
-                local subMenuOption = context:addOption(getText("ContextMenu_Pour_into"), items, nil);
-                local subMenu = context:getNew(context)
-                --adding the submenu?
-                context:addSubMenu(subMenuOption, subMenu)
-                for _,item in ipairs(pourInto) do
-                    --check if item is a partially filled item to create the other item's tooltip. Then move to a different function
-                    if instanceof(item, "DrainableComboItem") then
-                        local subOption = subMenu:addOption(item:getName(), items, ISInventoryPaneContextMenu.onTransferWater, waterContainer, item, player);
-                        local tooltip = ISInventoryPaneContextMenu.addToolTip()
-                        local tx = getTextManager():MeasureStringX(tooltip.font, getText("ContextMenu_WaterName") .. ":") + 20
-                        tooltip.description = string.format("%s: <SETX:%d> %d / %d",
-                                getText("ContextMenu_WaterName"), tx, item:getDrainableUsesInt(), 1.0 / item:getUseDelta() + 0.0001)
-                        subOption.toolTip = tooltip
-                    else
-                        subMenu:addOption(item:getName(), items, ISInventoryPaneContextMenu.onTransferWater, waterContainer, item, player);
-                    end
+            for _,item in ipairs(eligibleFuelItems) do
+                --check if item is a partially filled item to create the other item's tooltip. Then move to a different function
+                if instanceof(item, "DrainableComboItem") then
+                    local subOption = subMenu:addOption(item:getName(), items, Daikon.ApocalypseBiofuels.OnPourEthanol, ethanolItem, item, player, true);
+                    local tooltip = ISInventoryPaneContextMenu.addToolTip()
+                    local tx = getTextManager():MeasureStringX(tooltip.font, getText("ContextMenu_EthanolName") .. ":") + 20
+                    tooltip.description = string.format("%s: <SETX:%d> %d / %d",
+                            getText("ContextMenu_EthanolName"), tx, item:getDrainableUsesInt(), 1.0 / item:getUseDelta() + 0.0001)
+                    subOption.toolTip = tooltip
+                else
+                    subMenu:addOption(item:getName(), items, Daikon.ApocalypseBiofuels.OnPourEthanol, ethanolItem, item, player, false);
                 end
             end
-
-            context:addOption(getText("ContextMenu_Pour_on_Ground"), items, ISInventoryPaneContextMenu.onEmptyWaterContainer, waterContainer, player);
-       end
-       --]]
+        end
+    end
 end
+
+Daikon.ApocalypseBiofuels.OnPourEthanol = function(items, itemFrom, itemTo, player, isAlreadyDrainable)
+    --print("Moving water from " .. itemFrom:getName() .. " to " .. itemTo:getName());
+    if not isAlreadyDrainable then
+        local newItemType = itemTo:getReplaceType("EthanolSource");
+        local newItem = InventoryItemFactory.CreateItem(newItemType,0);
+        newItem:setFavorite(itemTo:isFavorite());
+        newItem:setCondition(itemTo:getCondition());
+        player:getInventory():AddItem(newItem);
+        if player:getPrimaryHandItem() == itemTo then
+            player:setPrimaryHandItem(newItem)
+        end
+        if player:getSecondaryHandItem() == itemTo then
+            player:setSecondaryHandItem(newItem)
+        end
+        player:getInventory():Remove(itemTo);
+
+        itemTo = newItem;
+    end
+    --
+    local waterStorageAvailable = (1 - itemTo:getUsedDelta()) / itemTo:getUseDelta();
+    local waterStorageNeeded = itemFrom:getUsedDelta() / itemFrom:getUseDelta();
+
+    local itemFromEndingDelta = 0;
+    local itemToEndingDelta = nil;
+    --
+    if waterStorageAvailable >= waterStorageNeeded then
+        --Transfer all water to the the second container.
+        local waterInA = itemTo:getUsedDelta() / itemTo:getUseDelta();
+        local waterInB = itemFrom:getUsedDelta() / itemFrom:getUseDelta();
+        local totalWater = waterInA + waterInB;
+
+        itemToEndingDelta = totalWater * itemTo:getUseDelta();
+        itemFromEndingDelta = 0;
+    end
+
+    if waterStorageAvailable < waterStorageNeeded then
+        --Transfer what we can. Leave the rest in the container.
+        local waterInB = itemFrom:getUsedDelta() / itemFrom:getUseDelta();
+        local waterRemainInB = waterInB - waterStorageAvailable;
+
+        itemFromEndingDelta = waterRemainInB * itemFrom:getUseDelta();
+        itemToEndingDelta = 1;
+    end
+
+    ISInventoryPaneContextMenu.transferIfNeeded(player, itemFrom)
+
+    ISTimedActionQueue.add(ISTransferWaterAction:new(player, itemFrom, itemTo, itemFromEndingDelta, itemToEndingDelta));
+end
+
+
 
 Events.OnFillInventoryObjectContextMenu.Add(Daikon.ApocalypseBiofuels.PourEthanolContextMenu)
 return Daikon

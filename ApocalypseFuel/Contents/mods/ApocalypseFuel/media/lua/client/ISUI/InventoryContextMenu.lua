@@ -15,10 +15,15 @@ Daikon.ApocalypseBiofuels.PourEthanolContextMenu = function(player, context, ite
     if ethanolItem:hasTag("ApoFuelEthanol") and ethanolItem:getDelta()>0 then
         ---@type InventoryContainer
         local inventory = player:getInventory()
-        local fuelItems = inventory:getAllTag("ApoFuelEthanol",ArrayList.new())
-        print(fuelItems)
-        for i=0,fuelItems:size()-1 do
-            print(fuelItems:get(i):getType())
+        local eligibleFuelItems = {}
+        local fuelItemsFull = inventory:getAllTag("ApoFuelEthanol",ArrayList.new())
+        for i=0,fuelItemsFull:size()-1 do
+            ---@type InventoryItem
+            local fuelItem = fuelItemsFull:get(i)
+            if fuelItem:getDelta()<1 and fuelItem ~= ethanolItem then
+                table.insert(fuelItem)
+            end
+            print(fuelItem:getType())
         end
     end
 

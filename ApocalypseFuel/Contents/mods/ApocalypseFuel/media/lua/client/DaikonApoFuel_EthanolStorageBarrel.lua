@@ -9,7 +9,7 @@ function EthanolBarrel:create(x, y, z, north, sprite)
     self.javaObject = IsoThumpable.new(cell, self.sq, sprite, north, self);
     buildUtil.setInfo(self.javaObject, self);
     buildUtil.consumeMaterial(self);
-    -- the barrel have 200 base health + 100 per carpentry lvl
+    -- the barrel have 5000
     self.javaObject:setMaxHealth(self:getHealth());
     self.javaObject:setHealth(self.javaObject:getMaxHealth());
     -- the sound that will be played when our barrel will be broken

@@ -25,6 +25,9 @@ Daikon.SandboxOptionsSyncing.SyncSettings = function(tableName, options)
                     end
                 end
                 option:asConfigOption():parse(value)
+                ---@type ConfigOption
+                option = option:asConfigOption()
+
                 print("Updated Sandbox Value: "..key.." -> "..value)
             end
         end

@@ -1,0 +1,13 @@
+version=1
+id=3032262576
+title=Far More Perishable Food
+description=An autopatcher that makes the game harder.
+description=No item lasts forever anymore. Every piece of food in the game spoils now. The only exception is Honey. Honey never spoils. (And Bleach. And a couple other items by default but those can be disabled)
+description=
+description=The mod features sandbox settings, letting you set a blacklist of items(prevents adjustment) and a manual override list(for customized values). You also have control over each broad category of items
+description=
+description=This mod encourages you to start a new save. Due to how items work, All non-perishable food spawned before the mod's installation will not get adjusted. A solution to thaat is being worked on
+description=
+description=[h3]This mod was made for the UdderlyRP server, find us on Discord at https://discord.gg/9HUdNf7qGe[/h3]
+tags=Build 41;Balance;Food;Hardmode;Realistic
+visibility=public

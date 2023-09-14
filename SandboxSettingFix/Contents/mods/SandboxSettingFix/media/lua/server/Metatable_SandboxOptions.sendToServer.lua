@@ -9,7 +9,7 @@ function metatable.sendToServer(self)
         Daikon.SandboxOptionsSyncing.ForceClientsToUpdate()
     end
     if isClient() then
-        Daikon.Commands["RefreshModData"]({})
+        Daikon.SandboxOptionsSyncing.Commands["RefreshModData"]({})
     end
 
 end

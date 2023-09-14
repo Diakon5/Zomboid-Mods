@@ -1,0 +1,22 @@
+Sandbox_EN = {
+    Sandbox_DaikonMorePerishables  = "Far More Perishable Food",
+    
+    Sandbox_DPF_Blacklist = "Blacklist",
+    Sandbox_DPF_Blacklist_tooltip = "A list of items that don't get adjusted, separate items with a \';\' character",
+    Sandbox_DPF_OverrideList = "Override List",
+    Sandbox_DPF_OverrideList_tooltip = "A list of items that get adjusted in a custom way, with the template of Module.Type@DaysFresh:DaysToRot;",
+    Sandbox_DPF_CannedFoodFreshDays = "Canned Food: Days Fresh",
+    Sandbox_DPF_CannedFoodFreshDays_tooltip = "The amount of days before foods identified as Canned Preserves become stale.",
+    Sandbox_DPF_CannedFoodRotDays = "Canned Food: Days To Rot",
+    Sandbox_DPF_CannedFoodRotDays_tooltip = "The amount of days before foods identified as Canned Preserves become rotten.",
+    Sandbox_DPF_HighAlcoholFreshDays = "High Alcohol: Days Fresh",
+    Sandbox_DPF_HighAlcoholFreshDays_tooltip = "The amount of days before foods identified as High Alcohol(EG. Wine) become stale.",
+    Sandbox_DPF_HighAlcoholRotDays = "High Alcohol: Days To Rot",
+    Sandbox_DPF_HighAlcoholRotDays_tooltip = "The amount of days before foods identified as High Alcohol(EG. Wine) become rotten.",
+    Sandbox_DPF_LowAlcoholFreshDays = "Low Alcohol: Days Fresh",
+    Sandbox_DPF_LowAlcoholFreshDays_tooltip = "The amount of days before foods identified as Low Alcohol(EG. Beer) become stale.",
+    Sandbox_DPF_LowAlcoholRotDays = "Low Alcohol: Days To Rot",
+    Sandbox_DPF_LowAlcoholRotDays_tooltip = "The amount of days before foods identified as Low Alcohol(EG. Beer) become rotten.",
+    Sandbox_DPF_Debug = "Debug logging",
+    Sandbox_DPF_Debug_tooltip = "In case your modpack doesn't work with debug mode, enable this option to print all adjusted values",
+	}

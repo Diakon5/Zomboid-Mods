@@ -6,5 +6,5 @@ description=
 description=Initially written by UdderlyEvelyn, refined by Daikon, this mod fixes a long-standing issue for servers with large mod-packs! Synchronising the settings over Global Mod Data, with an effort to maintain compatibility with other mods and minimise the traffic, no longer will your players be playing a different game!
 description=
 description=[h3]This mod was made for the UdderlyRP server, find us on Discord at https://discord.gg/9HUdNf7qGe[/h3]
-tags=Framework;Multiplayer
-visibility=unlisted
+tags=Build 41;Framework;Misc;Multiplayer
+visibility=public

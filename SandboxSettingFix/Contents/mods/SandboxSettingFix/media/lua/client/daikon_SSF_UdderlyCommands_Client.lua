@@ -2,7 +2,7 @@ local modName = "SandboxSyncFix"
 --Udderly Commands
 print("["..modName.."] Initializing UdderlyCommands Client..")
 local Daikon = require("daikon_WrapperToMakeTheSettingsIG")
-Daikon.Commands = Daikon.Commands or {}
+
 
 function Daikon.FakeMessage(msg, isAlert)
 	local chatMsg = 
@@ -72,7 +72,7 @@ ISChat["onCommandEntered"] = function(self)
 				end
 			end
 		end
-		local command = Daikon.Commands[enteredCommand]
+		local command = Daikon.SandboxOptionsSyncing.Commands[enteredCommand]
 		if command ~= nil and command ~= false then --If it has a function defined for client-side execution, run that.
 			--print("["..modName.."] Command \""..command.."\" has client side code, running that.")
 			local result = command(args)
@@ -94,7 +94,7 @@ ISChat["onCommandEntered"] = function(self)
 end
 
 print("["..modName.."] Initializing UdderlyCommands Commands..")
-Daikon.Commands["ForceClientsToUpdate"] = function(args)
+Daikon.SandboxOptionsSyncing.Commands["ForceClientsToUpdate"] = function(args)
 	if not Daikon.IsAdmin() then
 		return "You do not have access to this command."
 	else
@@ -102,14 +102,14 @@ Daikon.Commands["ForceClientsToUpdate"] = function(args)
 	end
 end
 
-Daikon.Commands["RefreshModData"] = function(args)
+Daikon.SandboxOptionsSyncing.Commands["RefreshModData"] = function(args)
 	if not Daikon.IsAdmin() then
 		return "You do not have access to this command."
 	else
 		sendClientCommand(modName, "RefreshModData", args)
 	end
 end
-Daikon.Commands["RefreshAndUpdate"] = function(args)
+Daikon.SandboxOptionsSyncing.Commands["RefreshAndUpdate"] = function(args)
 	if not Daikon.IsAdmin() then
 		return "You do not have access to this command."
 	else

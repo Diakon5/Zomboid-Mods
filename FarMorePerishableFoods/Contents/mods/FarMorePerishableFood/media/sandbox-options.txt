@@ -1,0 +1,47 @@
+VERSION = 1,
+
+option DaikonMorePerishables.Blacklist
+{
+	type = string, default = Base.Gum;Base.Peanuts;Base.SunflowerSeeds;Base.Salt;Base.Pasta;Base.Rice;Base.OatsRaw;Base.Vinegar;Base.Sugar;Base.RiceVinegar;Base.DehydratedMeatStick;Base.BeefJerky,
+	page = DaikonMorePerishables, translation = DPF_Blacklist,
+}
+option DaikonMorePerishables.OverrideList
+{
+	type = string, default = ,
+	page = DaikonMorePerishables, translation = DPF_OverrideList,
+}
+option DaikonMorePerishables.CannedFoodFreshDays
+{
+	type = integer, min=1, max = 1000000000, default = 180,
+	page = DaikonMorePerishables, translation = DPF_CannedFoodFreshDays,
+}
+option DaikonMorePerishables.CannedFoodRotDays
+{
+	type = integer, min=1, max = 1000000000, default = 365,
+	page = DaikonMorePerishables, translation = DPF_CannedFoodRotDays,
+}
+option DaikonMorePerishables.HighAlcoholFreshDays
+{
+	type = integer, min=1, max = 1000000000, default = 18250,
+	page = DaikonMorePerishables, translation = DPF_HighAlcoholFreshDays,
+}
+option DaikonMorePerishables.HighAlcoholRotDays
+{
+	type = integer, min=1, max = 1000000000, default = 18980,
+	page = DaikonMorePerishables, translation = DPF_HighAlcoholRotDays,
+}
+option DaikonMorePerishables.LowAlcoholFreshDays
+{
+	type = integer, min=1, max = 1000000000, default = 180,
+	page = DaikonMorePerishables, translation = DPF_LowAlcoholFreshDays,
+}
+option DaikonMorePerishables.LowAlcoholRotDays
+{
+	type = integer, min=1, max = 1000000000, default = 270,
+	page = DaikonMorePerishables, translation = DPF_LowAlcoholRotDays,
+}
+option DaikonMorePerishables.Debug
+{
+	type = boolean, default = false,
+	page = DaikonMorePerishables, translation = DPF_Debug,
+}

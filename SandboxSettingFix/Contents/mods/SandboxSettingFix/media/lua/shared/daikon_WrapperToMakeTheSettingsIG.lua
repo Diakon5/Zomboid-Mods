@@ -1,12 +1,5 @@
-Daikon =  Daikon or {
-    SandboxOptionsSyncing = {
-
-    },
-    Commands = {
-
-    },
-    CommandHandlers ={
-
-    }
-}
+Daikon =  Daikon or {}
+Daikon.SandboxOptionsSyncing = {}
+Daikon.SandboxOptionsSyncing.Commands = {}
+Daikon.SandboxOptionsSyncing.CommandHandlers ={}
 return Daikon

@@ -35,7 +35,7 @@ Daikon.ApocalypseBiofuels.PourEthanolContextMenu = function(player, context, ite
                 end
             end
         end
-        if #eligibleFuelItems >0 then
+        if #eligibleFuelItems > 0 then
             local subMenuOption = context:addOption(getText("ContextMenu_Pour_into"), items, nil);
             local subMenu = context:getNew(context)
             --adding the submenu?
@@ -57,6 +57,7 @@ Daikon.ApocalypseBiofuels.PourEthanolContextMenu = function(player, context, ite
     end
 end
 
+--This function prepares items to pour
 Daikon.ApocalypseBiofuels.OnPourEthanol = function(items, itemFrom, itemTo, player, isAlreadyDrainable)
     --print("Moving water from " .. itemFrom:getName() .. " to " .. itemTo:getName());
     if not isAlreadyDrainable then

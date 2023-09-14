@@ -162,11 +162,39 @@
         NeedToBeLearn: False,
         OnGiveXP:Recipe.OnGiveXP.None,
     }
-    recipe MixPetrolIntoBottle
+    recipe MixPetrolIntoBottleWithSoap
     {
         [Recipe.GetItemTypes.ApoFuelEmptyPetrol],
         [Recipe.GetItemTypes.ApoFuelEthanol]=5,
-        Soap2=2,
+        Soap2=1,
+        Result:PetrolCan,
+        RemoveResultItem:True,
+        Time:80.0,
+        Category:Cooking,
+        CanBeDoneFromFloor:true,
+        NeedToBeLearn: False,
+        OnCreate:Recipe.OnCreate.CreatePetrolManual,
+        OnGiveXP:Recipe.OnGiveXP.None,
+    }
+    recipe MixPetrolIntoBottleWithOil
+    {
+        [Recipe.GetItemTypes.ApoFuelEmptyPetrol],
+        [Recipe.GetItemTypes.ApoFuelEthanol]=5,
+        [Recipe.GetItemTypes.Oil]=2,
+        Result:PetrolCan,
+        RemoveResultItem:True,
+        Time:80.0,
+        Category:Cooking,
+        CanBeDoneFromFloor:true,
+        NeedToBeLearn: False,
+        OnCreate:Recipe.OnCreate.CreatePetrolManual,
+        OnGiveXP:Recipe.OnGiveXP.None,
+    }
+    recipe MixPetrolIntoBottleWithBakingSoda
+    {
+        [Recipe.GetItemTypes.ApoFuelEmptyPetrol],
+        [Recipe.GetItemTypes.ApoFuelEthanol]=5,
+        BakingSoda=1,
         Result:PetrolCan,
         RemoveResultItem:True,
         Time:80.0,

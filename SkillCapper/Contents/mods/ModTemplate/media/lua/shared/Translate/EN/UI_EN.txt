@@ -1,0 +1,12 @@
+UI_EN = {
+	UI_trait_DSC_city_person = "City Slicker",
+	UI_trait_DSC_city_person_desc = "You were never much for the countryside. -4 to Max. Foraging, -2 to Max. Fishing and Farming",
+	UI_trait_DSC_Heavy_footed = "Heavy-footed",
+	UI_trait_DSC_Heavy_footed_desc = "Stomping like an elephant. -4 to Max. Lightfooted and Sneaking",
+    UI_trait_DSC_LikeFastFood = "Fast Food Enthusiast",
+    UI_trait_DSC_LikeFastFood_desc = "It's a shame Spiffo's is closed down -6 Max. to Cooking",
+    UI_trait_DSC_Unhandy = "Unhandy",
+    UI_trait_DSC_Unhandy_desc = "When something breaks, you're not the person to call. -2 Max. to Carpentry, Cooking, Mechanics and Maintenance",
+    UI_trait_DSC_LowReadingComprehension = "Low Reading Comprehension",
+    UI_trait_DSC_LowReadingComprehension_desc = "You struggle to apply knowledge from books in practice. Halved XP multipliers from books",
+}

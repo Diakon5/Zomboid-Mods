@@ -40,6 +40,11 @@ option DaikonMorePerishables.LowAlcoholRotDays
 	type = integer, min=1, max = 1000000000, default = 270,
 	page = DaikonMorePerishables, translation = DPF_LowAlcoholRotDays,
 }
+option DaikonMorePerishables.BackwardsCompat
+{
+	type = boolean, default = false,
+	page = DaikonMorePerishables, translation = DPF_BackwardsCompat,
+}
 option DaikonMorePerishables.Debug
 {
 	type = boolean, default = false,

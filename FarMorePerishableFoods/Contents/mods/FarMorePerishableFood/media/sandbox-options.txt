@@ -12,12 +12,12 @@ option DaikonMorePerishables.OverrideList
 }
 option DaikonMorePerishables.CannedFoodFreshDays
 {
-	type = integer, min=1, max = 1000000000, default = 180,
+	type = integer, min=1, max = 1000000000, default = 270,
 	page = DaikonMorePerishables, translation = DPF_CannedFoodFreshDays,
 }
 option DaikonMorePerishables.CannedFoodRotDays
 {
-	type = integer, min=1, max = 1000000000, default = 365,
+	type = integer, min=1, max = 1000000000, default = 1095,
 	page = DaikonMorePerishables, translation = DPF_CannedFoodRotDays,
 }
 option DaikonMorePerishables.HighAlcoholFreshDays
@@ -39,6 +39,26 @@ option DaikonMorePerishables.LowAlcoholRotDays
 {
 	type = integer, min=1, max = 1000000000, default = 270,
 	page = DaikonMorePerishables, translation = DPF_LowAlcoholRotDays,
+}
+option DaikonMorePerishables.DriedFoodFreshDays
+{
+	type = integer, min=1, max = 1000000000, default = 120,
+	page = DaikonMorePerishables, translation = DPF_DriedFoodFreshDays,
+}
+option DaikonMorePerishables.DriedFoodRotDays
+{
+	type = integer, min=1, max = 1000000000, default = 360,
+	page = DaikonMorePerishables, translation = DPF_DriedFoodRotDays,
+}
+option DaikonMorePerishables.BakingFatFreshDays
+{
+	type = integer, min=1, max = 1000000000, default = 90,
+	page = DaikonMorePerishables, translation = DPF_BakingFatFreshDays,
+}
+option DaikonMorePerishables.BakingFatRotDays
+{
+	type = integer, min=1, max = 1000000000, default = 270,
+	page = DaikonMorePerishables, translation = DPF_BakingFatRotDays,
 }
 option DaikonMorePerishables.BackwardsCompat
 {

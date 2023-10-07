@@ -280,21 +280,25 @@ Daikon.MoreSpoilingFoods.AdjustNonPerishableFood = function(food)
 		end
 		return true
 	end
-	if food:getTags("BakingFat") then
-		daysFresh = SandboxVars.DaikonMorePerishables.BakingFatFreshDays
-		daysTotallyRotten = SandboxVars.DaikonMorePerishables.BakingFatRotDays
+	--The two tags below usually go together. In vanilla, all Oils are Baking Fats too
+	if food:getTags("BakingFat") or food:getTags("Oil") then
+		if food:getTags("Oil")then
+			daysFresh = SandboxVars.DaikonMorePerishables.CookOilFreshDays
+			daysTotallyRotten = SandboxVars.DaikonMorePerishables.CookOilRotDays
+		else
+			daysFresh = SandboxVars.DaikonMorePerishables.BakingFatFreshDays
+			daysTotallyRotten = SandboxVars.DaikonMorePerishables.BakingFatRotDays
+		end
+
 		WrapSetDaysFreshRot(food,daysFresh,daysTotallyRotten)
-		if isDebugEnabled() or debug  then
-			print(foodType.." is a Baking Fat, setting to DaysFresh: "..daysFresh..";DaysTotallyRotten"..daysTotallyRotten)
+		if isDebugEnabled() or debug then
+			print(foodType.." is a Baking Fat or Oil, setting to DaysFresh: "..daysFresh..";DaysTotallyRotten"..daysTotallyRotten)
 		end
 		if daysFresh == daysTotallyRotten == 1000000000 then
 			return false
 		end
 		return true
 	end
-	--TODO Potential Categories:
-	--Cooking Fats (BakingFat;Oil)
-	--Dried Food (DriedFood)
 
 	--the default case
 	daysFresh = 60

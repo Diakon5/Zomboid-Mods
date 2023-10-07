@@ -2,7 +2,7 @@ local Daikon = require("AutomaticFoodAdjuster")
 
 local funcCache = {}
 
-funcCache.InventoryItem = __classmetatables[InventoryItem.class].__index
+funcCache.InventoryItem = __classmetatables[zombie.scripting.objects.InventoryItem.class].__index
 funcCache.InventoryItem_getScriptItem = funcCache.InventoryItem.getScriptItem
 funcCache.InventoryItem_getOffAge = funcCache.InventoryItem.getOffAge
 funcCache.InventoryItem_getOffAgeMax = funcCache.InventoryItem.getOffAgeMax
@@ -10,16 +10,16 @@ funcCache.InventoryItem_setOffAge = funcCache.InventoryItem.setOffAge
 funcCache.InventoryItem_setOffAgeMax = funcCache.InventoryItem.setOffAgeMax
 funcCache.InventoryItem_setAge = funcCache.InventoryItem.setAge
 
-funcCache.ScriptItem = __classmetatables[Item.class].__index
+funcCache.ScriptItem = __classmetatables[zombie.scripting.objects.Item.class].__index
 funcCache.ScriptItem_getDaysTotallyRotten = funcCache.ScriptItem.getDaysTotallyRotten
 funcCache.ScriptItem_getDaysFresh = funcCache.ScriptItem.getDaysFresh
 funcCache.ScriptItem_getType = funcCache.ScriptItem.getType
 
-funcCache.ItemContainer = __classmetatables[ItemContainer.class].__index
+funcCache.ItemContainer = __classmetatables[zombie.inventory.ItemContainer.class].__index
 funcCache.ItemContainer_getItems = funcCache.ItemContainer.getItems
 funcCache.ItemContainer_getType = funcCache.ItemContainer.getType
 
-funcCache.ArrayList_base   = __classmetatables[ArrayList.class].__index
+funcCache.ArrayList_base   = __classmetatables[java.util.ArrayList.class].__index
 funcCache.ArrayList_size   = funcCache.ArrayList_base.size
 funcCache.ArrayList_get    = funcCache.ArrayList_base.get
 

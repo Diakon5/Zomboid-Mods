@@ -50,6 +50,16 @@ option DaikonMorePerishables.DriedFoodRotDays
 	type = integer, min=1, max = 1000000000, default = 360,
 	page = DaikonMorePerishables, translation = DPF_DriedFoodRotDays,
 }
+option DaikonMorePerishables.CookOilFreshDays
+{
+	type = integer, min=1, max = 1000000000, default = 90,
+	page = DaikonMorePerishables, translation = DPF_CookOilFreshDays,
+}
+option DaikonMorePerishables.CookOilRotDays
+{
+	type = integer, min=1, max = 1000000000, default = 270,
+	page = DaikonMorePerishables, translation = DPF_CookOilRotDays,
+}
 option DaikonMorePerishables.BakingFatFreshDays
 {
 	type = integer, min=1, max = 1000000000, default = 90,
